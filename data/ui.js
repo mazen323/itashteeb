@@ -31,6 +31,7 @@ export const ui = {
       title: "رحلة مشروعك تبدأ هنا",
       description: "من الفكرة إلى التنفيذ، نوفر لك كل ما تحتاجه لتحقيق مشروعك",
       explore: "استكشف",
+      step: (n) => `الخطوة ${n}`,
     },
     services: {
       eyebrow: "فئات الخدمات",
@@ -139,6 +140,7 @@ export const ui = {
       description:
         "From concept to handover, everything you need to bring your project to life",
       explore: "Explore",
+      step: (n) => `Step ${n}`,
     },
     services: {
       eyebrow: "Service categories",

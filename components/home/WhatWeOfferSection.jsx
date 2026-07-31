@@ -3,6 +3,7 @@ import { localize } from "@/data/i18n";
 import { offerings as rawOfferings } from "@/data/mock";
 import { ui } from "@/data/ui";
 import SectionHeading from "../ui/SectionHeading";
+import AutoScrollRow from "../ui/AutoScrollRow";
 import ArrowForward from "../ui/ArrowForward";
 
 export default function WhatWeOfferSection({ locale }) {
@@ -10,24 +11,24 @@ export default function WhatWeOfferSection({ locale }) {
   const offerings = localize(rawOfferings, locale);
 
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-10 md:gap-12">
       <SectionHeading title={t.title} description={t.description} />
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <AutoScrollRow className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-ps-4 px-4 pb-2 sm:-mx-6 sm:scroll-ps-6 sm:px-6 md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0 md:pb-0">
         {offerings.map((offering) => (
           <Link
             key={offering.id}
             href={offering.href}
-            className="group flex flex-col rounded-3xl border border-stone-200 bg-white p-7 transition-all hover:-translate-y-1 hover:border-brand-300 hover:shadow-xl hover:shadow-brand-900/5"
+            className="group flex w-[82%] shrink-0 snap-start flex-col rounded-3xl border border-stone-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-lg hover:shadow-brand-900/5 sm:w-80 sm:p-8 md:w-auto"
           >
-            <span className="grid size-12 place-items-center rounded-2xl bg-brand-50 text-brand-700 ring-1 ring-brand-100 transition-colors group-hover:bg-brand-700 group-hover:text-white">
+            <span className="grid size-12 place-items-center rounded-2xl bg-brand-50 text-brand-700 transition-colors duration-300 group-hover:bg-brand-700 group-hover:text-white">
               <offering.icon className="size-6" aria-hidden="true" />
             </span>
 
-            <h3 className="mt-6 text-xl font-bold text-stone-900">
+            <h3 className="mt-6 text-lg font-bold text-stone-900 sm:text-xl">
               {offering.title}
             </h3>
-            <p className="mt-3 grow leading-relaxed text-stone-600">
+            <p className="mt-3 grow text-sm leading-7 text-stone-600 sm:text-base">
               {offering.description}
             </p>
 
@@ -37,7 +38,7 @@ export default function WhatWeOfferSection({ locale }) {
             </span>
           </Link>
         ))}
-      </div>
+      </AutoScrollRow>
     </div>
   );
 }
