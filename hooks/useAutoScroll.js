@@ -13,11 +13,16 @@ const forwardSign = (track) =>
 
 export function useAutoScroll(
   trackRef,
-  { intervalMs = 5000, paused = false, resetKey } = {},
+  { intervalMs = 5000, paused = false, resetKey, advance } = {},
 ) {
   const motionOk = useMotionOk();
   const engaged = useRef(false);
   const lastGesture = useRef(0);
+  const advanceRef = useRef(advance);
+
+  useEffect(() => {
+    advanceRef.current = advance;
+  });
 
   useEffect(() => {
     const track = trackRef.current;
@@ -46,6 +51,11 @@ export function useAutoScroll(
     const timer = setInterval(() => {
       if (!inView || engaged.current || document.hidden) return;
       if (performance.now() - lastGesture.current < GESTURE_QUIET_MS) return;
+
+      if (advanceRef.current) {
+        advanceRef.current();
+        return;
+      }
 
       const max = track.scrollWidth - track.clientWidth;
       if (max < 4) return;

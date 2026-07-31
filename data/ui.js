@@ -74,6 +74,14 @@ export const ui = {
       description:
         "تعرف على المحترفين المعتمدين والموثوقين الذين يجلبون الخبرة والجودة إلى كل مشروع",
       yearsExperience: (n) => `${n} سنوات خبرة`,
+      projectsCount: (n) => `+${n} مشروع`,
+      availableNow: "متاح الآن",
+      viewProfile: "عرض الملف",
+      slider: "بطاقات المحترفين المعتمدين",
+      sliderRole: "سلايدر",
+      prev: "المحترفون السابقون",
+      next: "المحترفون التاليون",
+      dragHint: "اسحب أو استخدم الأسهم لتصفح المحترفين",
       viewAll: "عرض جميع المحترفين",
     },
     card: {
@@ -174,6 +182,14 @@ export const ui = {
       description:
         "Meet the verified, trusted professionals who bring experience and quality to every project",
       yearsExperience: (n) => `${n} years experience`,
+      projectsCount: (n) => `${n}+ projects`,
+      availableNow: "Available now",
+      viewProfile: "View profile",
+      slider: "Certified professional plates",
+      sliderRole: "carousel",
+      prev: "Previous professionals",
+      next: "Next professionals",
+      dragHint: "Drag or use the arrows to browse professionals",
       viewAll: "View all professionals",
     },
     card: {

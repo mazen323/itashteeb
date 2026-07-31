@@ -582,6 +582,13 @@ export const companies = [
     id: "almasar-alhandasi",
     name: { ar: "المسار الهندسي", en: "Al Masar Engineering" },
     logo: "/logos/almasar-alhandasi.svg",
+    cover: {
+      src: img("1600607687939-ce8a6c25118c", 700, 950),
+      alt: {
+        ar: "مجلس عربي معاصر من تنفيذ المسار الهندسي",
+        en: "A contemporary majlis delivered by Al Masar Engineering",
+      },
+    },
     tagline: {
       ar: "مكتب هندسي متكامل يقدّم التصميم والإشراف والتنفيذ للمشاريع السكنية الفاخرة",
       en: "A full-service practice covering design, supervision and delivery for premium homes",
@@ -603,6 +610,13 @@ export const companies = [
     id: "dar-alemara",
     name: { ar: "دار العمارة للاستشارات الهندسية", en: "Dar Al Emara Consultants" },
     logo: "/logos/dar-alemara.svg",
+    cover: {
+      src: img("1497366754035-f200968a6e72", 700, 950),
+      alt: {
+        ar: "مساحة عمل مفتوحة من تصميم دار العمارة",
+        en: "An open-plan workspace designed by Dar Al Emara",
+      },
+    },
     tagline: {
       ar: "استشارات معمارية وإنشائية للمشاريع التجارية والإدارية مع إدارة كاملة للمشروع",
       en: "Architectural and structural consultancy for commercial and office projects, fully managed",
@@ -624,6 +638,13 @@ export const companies = [
     id: "noqta-tasmeem",
     name: { ar: "نقطة تصميم", en: "Noqta Design Studio" },
     logo: "/logos/noqta-tasmeem.svg",
+    cover: {
+      src: img("1600566753086-00f18fb6b3ea", 700, 950),
+      alt: {
+        ar: "مساحة داخلية دافئة من تصميم نقطة تصميم",
+        en: "A warm interior styled by Noqta Design Studio",
+      },
+    },
     tagline: {
       ar: "استوديو تصميم داخلي يهتم بالتفاصيل الصغيرة والحلول الذكية للمساحات المحدودة",
       en: "An interior studio obsessed with fine detail and smart solutions for compact spaces",
@@ -645,6 +666,13 @@ export const companies = [
     id: "beit-alhirfa",
     name: { ar: "بيت الحرفة للتشطيبات", en: "Beit Al Hirfa Finishing" },
     logo: "/logos/beit-alhirfa.svg",
+    cover: {
+      src: img("1600585154526-990dced4db0d", 700, 950),
+      alt: {
+        ar: "وحدة سكنية بتشطيب كامل من بيت الحرفة",
+        en: "A fully finished home delivered by Beit Al Hirfa",
+      },
+    },
     tagline: {
       ar: "تشطيبات تسليم مفتاح بجودة حرفية عالية، مع فرق تنفيذ ثابتة ومواد موثوقة",
       en: "Turnkey finishing with true craftsmanship, steady in-house crews and trusted materials",
@@ -666,6 +694,13 @@ export const companies = [
     id: "roaya-alkhalij",
     name: { ar: "رؤية الخليج للديكور", en: "Gulf Vision Interiors" },
     logo: "/logos/roaya-alkhalij.svg",
+    cover: {
+      src: img("1517248135467-4c7edcad34c4", 700, 950),
+      alt: {
+        ar: "صالة مطعم من تنفيذ رؤية الخليج للديكور",
+        en: "A restaurant interior delivered by Gulf Vision Interiors",
+      },
+    },
     tagline: {
       ar: "تصميم وتنفيذ الهوية الداخلية للمطاعم والمساحات التجارية بطابع محلي معاصر",
       en: "Designing and building interior identity for restaurants and retail with a contemporary local voice",
@@ -687,6 +722,13 @@ export const companies = [
     id: "taqniyat-albina",
     name: { ar: "تقنيات البناء الحديثة", en: "Modern Build Technologies" },
     logo: "/logos/taqniyat-albina.svg",
+    cover: {
+      src: img("1503387762-592deb58ef4e", 700, 950),
+      alt: {
+        ar: "موقع تنفيذ إنشائي لتقنيات البناء الحديثة",
+        en: "A structural site run by Modern Build Technologies",
+      },
+    },
     tagline: {
       ar: "مقاولات إنشائية للأبراج والمجمعات السكنية بأنظمة بناء حديثة وجداول تسليم دقيقة",
       en: "Structural contracting for towers and residential compounds using modern systems and tight schedules",
