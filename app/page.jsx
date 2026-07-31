@@ -1,6 +1,7 @@
 import HeroSection from "@/components/home/HeroSection";
 import SearchFilterBar from "@/components/home/SearchFilterBar";
 import WhatWeOfferSection from "@/components/home/WhatWeOfferSection";
+import ServiceCategoriesSection from "@/components/home/ServiceCategoriesSection";
 import FeaturedProfessionalSection from "@/components/home/FeaturedProfessionalSection";
 import PortfolioGridSection from "@/components/home/PortfolioGridSection";
 import CertifiedProfessionalsSection from "@/components/home/CertifiedProfessionalsSection";
@@ -94,6 +95,8 @@ export default async function HomePage() {
       <Section id="what-we-offer">
         <WhatWeOfferSection locale={locale} />
       </Section>
+
+      <ServiceCategoriesSection locale={locale} />
 
       <Section id="featured-professional" className="bg-stone-50/60">
         <FeaturedProfessionalSection locale={locale} />

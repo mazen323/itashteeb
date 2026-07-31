@@ -32,6 +32,22 @@ export const ui = {
       description: "من الفكرة إلى التنفيذ، نوفر لك كل ما تحتاجه لتحقيق مشروعك",
       explore: "استكشف",
     },
+    services: {
+      eyebrow: "فئات الخدمات",
+      title: "كل خدمة يحتاجها مشروعك",
+      description:
+        "اختر الفئة التي تناسب مشروعك، ثم تصفّح خدماتها لتصل إلى المحترفين المعتمدين فيها",
+      tabs: "فئات الخدمات",
+      slider: (name) => `خدمات ${name}`,
+      sliderRole: "سلايدر",
+      prev: "الخدمات السابقة",
+      next: "الخدمات التالية",
+      count: (n) => `${n} خدمة`,
+      pros: (n) => `${n} محترف`,
+      explore: "التفاصيل",
+      dragHint: "اسحب أو استخدم الأسهم لتصفح الخدمات",
+      viewAll: "تصفح جميع الخدمات",
+    },
     featured: {
       title: "نخبة المحترفين",
       description:
@@ -113,6 +129,22 @@ export const ui = {
       description:
         "From concept to handover, everything you need to bring your project to life",
       explore: "Explore",
+    },
+    services: {
+      eyebrow: "Service categories",
+      title: "Every service your project needs",
+      description:
+        "Pick the category that fits your project, then browse its services to reach the certified pros behind them",
+      tabs: "Service categories",
+      slider: (name) => `${name} services`,
+      sliderRole: "carousel",
+      prev: "Previous services",
+      next: "Next services",
+      count: (n) => `${n} services`,
+      pros: (n) => `${n} pros`,
+      explore: "Details",
+      dragHint: "Drag or use the arrows to browse services",
+      viewAll: "Browse all services",
     },
     featured: {
       title: "Featured professionals",

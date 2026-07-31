@@ -101,6 +101,27 @@ footer :focus-visible {
   }
 }
 
+/* faint blueprint grid behind the services band, faded out at the edges */
+@utility blueprint-grid {
+  background-image:
+    linear-gradient(to right, var(--color-brand-200) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-brand-200) 1px, transparent 1px);
+  background-size: 3.5rem 3.5rem;
+  mask-image: radial-gradient(70% 60% at 50% 45%, #000, transparent);
+}
+
+/* service cards fade in when their category becomes the active one */
+@keyframes card-rise {
+  from {
+    opacity: 0;
+    translate: 0 0.75rem;
+  }
+}
+
+@utility card-rise {
+  animation: card-rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 /* hero slider animations */
 @keyframes hero-rise {
   from {
