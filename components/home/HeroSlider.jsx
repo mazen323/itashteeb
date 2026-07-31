@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight, GripHorizontal } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { useMotionOk } from "@/hooks/useMotionOk";
 import { localize } from "@/data/i18n";
 import {
@@ -12,7 +12,6 @@ import {
   trustBadges as rawTrustBadges,
 } from "@/data/mock";
 import { ui } from "@/data/ui";
-import SceneCustomizer from "./SceneCustomizer";
 import ArrowForward from "../ui/ArrowForward";
 
 const AUTOPLAY_MS = 7000;
@@ -27,7 +26,6 @@ export default function HeroSlider({ locale }) {
 
   const [index, setIndex] = useState(0);
   const [focused, setFocused] = useState(false);
-  const [dragging, setDragging] = useState(false);
   const [tabHidden, setTabHidden] = useState(false);
   const swipeStart = useRef(null);
 
@@ -44,7 +42,7 @@ export default function HeroSlider({ locale }) {
   }, []);
 
   
-  const suspended = focused || dragging || tabHidden;
+  const suspended = focused || tabHidden;
 
   // Swipe toward the reading start goes forward: right in RTL, left in LTR.
   const handlePointerUp = (event) => {
@@ -112,7 +110,7 @@ export default function HeroSlider({ locale }) {
         aria-hidden="true"
       />
       <div
-        className="absolute inset-0 from-brand-950/85 via-brand-950/35 to-transparent rtl:bg-linear-to-l ltr:bg-linear-to-r"
+        className="absolute inset-0 from-brand-950/92 via-brand-950/45 to-transparent rtl:bg-linear-to-l ltr:bg-linear-to-r"
         aria-hidden="true"
       />
 
@@ -126,34 +124,16 @@ export default function HeroSlider({ locale }) {
             i === index ? "opacity-100" : "opacity-0"
           }`}
         >
-          {slide.draggables ? (
-            <>
-              <SceneCustomizer
-                key={locale}
-                draggables={slide.draggables}
-                mirror={!rtl}
-                active={i === index}
-                onDragChange={setDragging}
-                label={t.dragItem}
-              />
-              {/* hint sits on the tags side, not the copy side */}
-              <p className="absolute bottom-40 inset-e-6 flex items-center gap-2 rounded-full bg-stone-950/35 px-3.5 py-2 text-xs font-medium text-white/90 ring-1 ring-white/20 backdrop-blur-md">
-                <GripHorizontal className="size-4" aria-hidden="true" />
-                {t.dragHint}
-              </p>
-            </>
-          ) : (
-            <SceneHighlights
-              items={slide.highlights}
-              mirror={!rtl}
-              active={i === index}
-            />
-          )}
+          <SceneHighlights
+            items={slide.highlights}
+            mirror={!rtl}
+            active={i === index}
+          />
         </div>
       ))}
 
    
-      <div className="pointer-events-none relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-4 pb-36 sm:px-6 lg:justify-center lg:px-8 lg:pb-32">
+      <div className="pointer-events-none relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-4 pb-32 sm:px-6 sm:pb-36 lg:justify-center lg:px-8 lg:pb-32">
         <div className="pointer-events-auto grid max-w-xl lg:max-w-2xl">
           {heroSlides.map((slide, i) => {
             const on = i === index;
@@ -168,7 +148,7 @@ export default function HeroSlider({ locale }) {
               >
                 <span
                   style={{ animationDelay: "80ms" }}
-                  className={`inline-flex items-center gap-2 rounded-full bg-stone-950/35 px-4 py-1.5 text-xs font-semibold text-white ring-1 ring-white/25 backdrop-blur-md sm:text-sm ${
+                  className={`inline-flex items-center gap-2 rounded-full bg-stone-950/35 px-3.5 py-1.5 text-[11px] font-semibold text-white ring-1 ring-white/25 backdrop-blur-md sm:px-4 sm:text-sm ${
                     on ? "hero-rise" : ""
                   }`}
                 >
@@ -183,7 +163,7 @@ export default function HeroSlider({ locale }) {
                 <span className="block overflow-hidden">
                   <h1
                     style={{ animationDelay: "180ms" }}
-                    className={`-mb-2 pb-2 text-4xl leading-[1.15] font-extrabold tracking-tight text-white drop-shadow-sm sm:text-5xl lg:text-6xl ${
+                    className={`-mb-2 pb-2 text-[1.75rem] leading-[1.2] font-extrabold text-balance sm:leading-[1.15] tracking-tight text-white drop-shadow-sm sm:text-5xl lg:text-6xl ${
                       on ? "hero-reveal" : ""
                     }`}
                   >
@@ -194,7 +174,7 @@ export default function HeroSlider({ locale }) {
 
                 <p
                   style={{ animationDelay: "340ms" }}
-                  className={`max-w-lg text-base leading-relaxed text-white/85 drop-shadow-sm md:text-lg ${
+                  className={`max-w-lg text-sm leading-relaxed text-white/85 drop-shadow-sm sm:text-base md:text-lg ${
                     on ? "hero-rise" : ""
                   }`}
                 >
@@ -203,11 +183,11 @@ export default function HeroSlider({ locale }) {
 
                 <div
                   style={{ animationDelay: "440ms" }}
-                  className={`flex flex-wrap items-center gap-3 ${on ? "hero-rise" : ""}`}
+                  className={`flex w-full flex-wrap items-center gap-3 sm:w-auto ${on ? "hero-rise" : ""}`}
                 >
                   <Link
                     href={slide.cta.href}
-                    className="group inline-flex items-center gap-2 rounded-2xl bg-accent-400 px-6 py-3.5 text-sm font-bold text-stone-950 shadow-xl shadow-stone-950/25 transition hover:bg-accent-300 md:text-base"
+                    className="group inline-flex flex-1 items-center justify-center gap-2 rounded-2xl bg-accent-400 px-4 py-3.5 text-sm whitespace-nowrap sm:px-6 font-bold text-stone-950 shadow-xl shadow-stone-950/25 transition hover:bg-accent-300 sm:flex-none md:text-base"
                   >
                     {slide.cta.label}
                     <ArrowForward />
@@ -215,7 +195,7 @@ export default function HeroSlider({ locale }) {
                   {/* dark fill keeps the white label readable over any image */}
                   <Link
                     href="#what-we-offer"
-                    className="inline-flex items-center rounded-2xl bg-stone-950/30 px-6 py-3.5 text-sm font-bold text-white ring-1 ring-white/35 backdrop-blur-md transition hover:bg-stone-950/50 md:text-base"
+                    className="inline-flex flex-1 items-center justify-center rounded-2xl bg-stone-950/30 px-4 py-3.5 text-sm whitespace-nowrap sm:px-6 font-bold text-white ring-1 ring-white/35 backdrop-blur-md transition hover:bg-stone-950/50 sm:flex-none md:text-base"
                   >
                     {t.secondaryCta}
                   </Link>
@@ -223,12 +203,12 @@ export default function HeroSlider({ locale }) {
 
                 <ul
                   style={{ animationDelay: "540ms" }}
-                  className={`flex flex-wrap items-center gap-2.5 ${on ? "hero-rise" : ""}`}
+                  className={`grid w-full grid-cols-3 divide-x divide-white/15 rounded-2xl bg-stone-950/45 ring-1 ring-white/15 backdrop-blur-md sm:flex sm:w-auto sm:flex-wrap sm:items-center sm:gap-2.5 sm:divide-x-0 sm:rounded-none sm:bg-transparent sm:ring-0 sm:backdrop-blur-none ${on ? "hero-rise" : ""}`}
                 >
                   {trustBadges.map((badge) => (
                     <li
                       key={badge.id}
-                      className="inline-flex items-center gap-2 rounded-full bg-stone-950/35 px-3.5 py-2 text-xs font-semibold text-white/90 ring-1 ring-white/20 backdrop-blur-md sm:text-sm"
+                      className="flex flex-col items-center justify-center gap-1.5 px-2 py-3 text-center text-[11px] leading-tight font-semibold text-white/90 sm:flex-row sm:gap-2 sm:rounded-full sm:bg-stone-950/35 sm:px-3.5 sm:py-2 sm:text-sm sm:ring-1 sm:ring-white/20 sm:backdrop-blur-md"
                     >
                       <badge.icon
                         className="size-4 text-accent-300"
@@ -244,7 +224,7 @@ export default function HeroSlider({ locale }) {
         </div>
 
         {/* Slide controls */}
-        <div className="pointer-events-auto mt-9 flex flex-wrap items-center gap-x-5 gap-y-4 lg:mt-12">
+        <div className="pointer-events-auto mt-8 flex flex-wrap items-center gap-x-5 gap-y-4 sm:mt-10 lg:mt-12">
           <div className="flex items-center gap-3">
             {heroSlides.map((slide, i) => {
               const on = i === index;
@@ -328,29 +308,31 @@ export default function HeroSlider({ locale }) {
 
 function SceneHighlights({ items, mirror, active }) {
   return (
-    <div className="absolute inset-0">
+    <div className="absolute inset-0" aria-hidden="true">
       {items.map((item, i) => (
         <div
           key={item.id}
           style={{
             left: `${mirror ? 100 - item.x : item.x}%`,
             top: `${item.y}%`,
-            animationDelay: `${380 + i * 120}ms`,
+            animationDelay: `${380 + i * 140}ms`,
           }}
           className={`absolute -translate-x-1/2 -translate-y-1/2 ${
             active ? "hero-pop" : ""
           }`}
         >
-          <span className="flex items-center gap-2 rounded-full bg-white/95 py-2 ps-2 pe-3.5 shadow-xl shadow-stone-950/40 ring-1 ring-stone-950/10 backdrop-blur">
-            <span
-              className="grid size-7 place-items-center rounded-full text-white"
-              style={{ backgroundColor: item.swatch }}
-            >
-              <item.icon className="size-4" aria-hidden="true" />
-            </span>
-            <span className="text-sm font-semibold text-stone-800">
-              {item.label}
-            </span>
+          <span
+            style={{
+              animationDelay: `${i * 900}ms`,
+              animationDuration: `${5.5 + i * 0.9}s`,
+            }}
+            className="marker-float relative block"
+          >
+            <span className="absolute inset-0 -z-10 rounded-full bg-stone-950/25 blur-xl" />
+            <item.icon
+              className="size-12 text-white/90 drop-shadow-[0_2px_14px_rgba(10,36,35,0.65)] lg:size-16"
+              strokeWidth={1.1}
+            />
           </span>
         </div>
       ))}

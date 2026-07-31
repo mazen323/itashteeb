@@ -5,7 +5,7 @@ export default function HeroSection({ locale }) {
   return (
     <section
       aria-label={ui[locale].hero.section}
-      className="relative isolate h-svh max-h-230 min-h-155 w-full overflow-hidden bg-brand-950"
+      className="relative isolate h-svh max-h-230 min-h-165 sm:min-h-155 w-full overflow-hidden bg-brand-950"
     >
       <HeroSlider locale={locale} />
     </section>

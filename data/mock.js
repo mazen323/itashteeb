@@ -105,7 +105,7 @@ export const heroSlides = [
       ar: "غرفة معيشة بتشطيب حديث بألوان محايدة وإضاءة طبيعية واسعة",
       en: "A modern living space in neutral tones with wide natural light",
     },
-    draggables: [
+    highlights: [
       { id: "lighting", icon: Lamp, label: { ar: "إضاءة", en: "Lighting" }, swatch: "#e0a83a", x: 28, y: 20 },
       { id: "greenery", icon: Leaf, label: { ar: "نباتات", en: "Greenery" }, swatch: "#2b908d", x: 11, y: 40 },
       { id: "furniture", icon: Armchair, label: { ar: "أثاث", en: "Furniture" }, swatch: "#7a5c48", x: 36, y: 48 },
