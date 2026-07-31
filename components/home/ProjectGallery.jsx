@@ -94,7 +94,7 @@ export default function ProjectGallery({ images, locale }) {
         onPointerMove={moveDrag}
         onPointerUp={endDrag}
         onPointerCancel={endDrag}
-        className={`no-scrollbar flex h-full touch-pan-x overflow-x-auto overscroll-x-contain select-none ${
+        className={`no-scrollbar flex h-full touch-manipulation overflow-x-auto overscroll-x-contain select-none ${
           dragging ? "cursor-grabbing" : "cursor-grab snap-x snap-mandatory"
         }`}
       >
