@@ -52,6 +52,7 @@ export const ui = {
       title: "نخبة المحترفين",
       description:
         "تعرف على أفضل المحترفين في مجال البناء والتشييد، حيث يجتمع الخبرة والإبداع لتحقيق رؤيتك",
+      by: "المكتب المنفّذ",
       projects: "المشاريع",
       experience: "الخبرة",
       years: (n) => `${n} سنوات`,
@@ -65,6 +66,7 @@ export const ui = {
       title: "أحدث أعمالنا",
       description:
         "اكتشف مشاريعنا الحديثة التي تجمع بين الإبداع والجودة لتحويل رؤيتك إلى واقع ملموس",
+      dragHint: "اسحب لتصفح المشاريع",
       viewAll: "استكشف جميع المشاريع",
     },
     certified: {
@@ -150,6 +152,7 @@ export const ui = {
       title: "Featured professionals",
       description:
         "Meet the best in construction and design, where experience and creativity come together to realise your vision",
+      by: "Delivered by",
       projects: "Projects",
       experience: "Experience",
       years: (n) => `${n} years`,
@@ -163,6 +166,7 @@ export const ui = {
       title: "Our latest work",
       description:
         "Discover recent projects that pair creativity with quality to turn your vision into something real",
+      dragHint: "Swipe to browse projects",
       viewAll: "Browse all projects",
     },
     certified: {

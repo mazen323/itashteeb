@@ -102,9 +102,8 @@ export default async function HomePage() {
         <FeaturedProfessionalSection locale={locale} />
       </Section>
 
-      <Section id="latest-projects">
-        <PortfolioGridSection locale={locale} />
-      </Section>
+      {/* full-bleed: dark band with its own cut edges */}
+      <PortfolioGridSection locale={locale} />
 
       <Section id="certified-professionals" className="bg-stone-50/60">
         <CertifiedProfessionalsSection locale={locale} />

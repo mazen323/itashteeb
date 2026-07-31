@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ChevronRight, MoveHorizontal, Users } from "lucide-react";
+import { useAutoScroll } from "@/hooks/useAutoScroll";
 import { localize } from "@/data/i18n";
 import { serviceCategories as rawCategories } from "@/data/mock";
 import { ui } from "@/data/ui";
@@ -48,6 +49,8 @@ export default function ServiceCategoriesSection({ locale }) {
       thumb: Math.min(100, (track.clientWidth / track.scrollWidth) * 100),
     });
   };
+
+  useAutoScroll(trackRef, { paused: dragging, resetKey: active });
 
   // switching category swaps the whole card set, so rewind and re-measure
   useEffect(() => {
