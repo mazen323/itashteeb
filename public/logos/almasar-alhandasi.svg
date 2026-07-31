@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="المسار الهندسي">
+  <rect width="96" height="96" rx="22" fill="#183e3e"/>
+  <path d="M24 68a24 24 0 0 1 48 0" fill="none" stroke="#e0a83a" stroke-width="6" stroke-linecap="round"/>
+  <path d="M48 68V30" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="48" cy="28" r="6" fill="#fff"/>
+</svg>
