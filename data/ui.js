@@ -25,6 +25,9 @@ export const ui = {
     search: {
       heading: "البحث عن محترفين ومشاريع",
       submit: "بحث",
+      placeholder: "ابحث عن خدمة أو محترف أو مشروع...",
+      filters: "الفلاتر",
+      clear: "مسح الفلاتر",
       popular: "الأكثر بحثاً",
     },
     offer: {
@@ -133,6 +136,9 @@ export const ui = {
     search: {
       heading: "Search professionals and projects",
       submit: "Search",
+      placeholder: "Search a service, professional or project...",
+      filters: "Filters",
+      clear: "Clear filters",
       popular: "Trending",
     },
     offer: {
